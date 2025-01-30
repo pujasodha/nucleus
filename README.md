@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## This is a basic ruby app with docker that can be used as a starting point for any new app made
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Steps 
+1. Navigate to `Dockerfile-dev` and specify Ruby Version
+2. Navigate to `Gemfile` to specify rails version
+3. Run `docker compose up --build` first time at least to get it started
+   - `docker compose up` from there
+4. Run `docker-compose run --service-ports web bash` to get into the bash
