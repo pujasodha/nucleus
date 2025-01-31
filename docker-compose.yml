@@ -8,3 +8,28 @@ services:
     volumes:
       - .:/usr/src/app
     command: rails s -b 0.0.0.0
+    depends_on:
+      - db-postgres
+  db-postgres:
+    image: postgres
+    restart: always
+    ports:
+      - 3002:5432
+    volumes:
+      - db-postgres:/var/lib/postgresql/data
+    environment:
+    - POSTGRES_USER=postgres_user
+    - POSTGRES_PASSWORD=postgres_root
+    - POSTGRES_HOST=db-postgres
+    - POSTGRES_DB=app
+  db-admin:
+    image: adminer
+    restart: always
+    ports:
+      - 3003:8080
+    logging:
+      driver: "none"
+    depends_on:
+      - db-postgres
+volumes:
+  db-postgres: {}
