@@ -8,5 +8,5 @@
 3. Run `docker compose up --build` first time at least to get it started
    - `docker compose up` from there
 4. Run `docker-compose run --service-ports web bash` to get into the bash
-5. When app is up and running, navigate to `Dockerfile-ruby` and `database.yml` and update Postgres credentials 
+5. When app is up and running, navigate to `Dockerfile-dev` and `database.yml` and update Postgres credentials 
    - in bash: `rake db:create`
